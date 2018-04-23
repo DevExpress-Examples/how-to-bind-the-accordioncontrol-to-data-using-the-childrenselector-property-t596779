@@ -1,0 +1,50 @@
+﻿<dx:DXWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion" 
+        xmlns:local="clr-namespace:ChildrenSelector" 
+        x:Class="ChildrenSelector.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <dx:DXWindow.Resources>
+        <local:MySelector x:Key="mySelector"/>
+    </dx:DXWindow.Resources>
+    <dx:DXWindow.DataContext>
+        <local:ViewModel/>
+    </dx:DXWindow.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Border Margin="5" Grid.Column="0" BorderBrush="Black" BorderThickness="1">
+            <dxa:AccordionControl Name="accordion" SelectionUnit="SubItem" ItemsSource="{Binding MyData.Categories }" 
+                                  SelectedItem="{Binding SelectedItem}" ChildrenSelector="{StaticResource mySelector}">
+                <dxa:AccordionControl.Resources>
+                    <DataTemplate DataType="{x:Type local:Category}">
+                        <TextBlock Text="{Binding CategoryName}"/>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type local:Item}">
+                        <TextBlock Text="{Binding ItemName}"/>
+                    </DataTemplate>
+                </dxa:AccordionControl.Resources>
+            </dxa:AccordionControl>
+        </Border>
+        <Border Margin="5" Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Margin="5" VerticalAlignment="Center">Item Name</Label>
+                    <dxe:TextEdit Margin="5" Width="150" Text="{Binding SelectedItem.Description}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Margin="5" Content="Expand All Items" 
+                            Command="{Binding ElementName=accordion, Path=Commands.ExpandAllItems}" />
+                    <Button Margin="5" Content="Collapse All Items" 
+                            Command="{Binding ElementName=accordion, Path=Commands.CollapseAllItems}" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</dx:DXWindow>
