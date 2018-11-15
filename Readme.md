@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindow.xaml](./CS/ChildrenSelector/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/ChildrenSelector/MainWindow.xaml))
+* [ViewModel.cs](./CS/ChildrenSelector/ViewModel.cs) (VB: [ViewModel.vb](./VB/ChildrenSelector/ViewModel.vb))
+<!-- default file list end -->
 # How to bind the AccordionControl to data using the ChildrenSelector property
 
 
