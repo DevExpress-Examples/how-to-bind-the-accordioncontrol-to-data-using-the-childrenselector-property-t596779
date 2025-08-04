@@ -91,7 +91,7 @@ Define templates to display `Category` and `Item` objects:
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
-[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-bind-the-accordioncontrol-to-data-using-the-childrenselector-property-t596779&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=how-to-bind-the-accordioncontrol-to-data-using-the-childrenselector-property-t596779&~~~was_helpful=no)
+[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-accordion-bind-to-hierarchical-objects-of-different-types&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-accordion-bind-to-hierarchical-objects-of-different-types&~~~was_helpful=no)
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
