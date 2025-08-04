@@ -4,18 +4,89 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+
+# WPF Accordion Control - Bind to a data source that contains hierarchical data objects of different types
+
+This example binds the WPF [`AccordionControl`](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl) to a hierarchical data structure that includes objects of different types. Use this technique when your data model does not expose a unified child collection (for instance, when parent and child objects do not share a common base class).
+
+The implementation leverages the [`ChildrenSelector`](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenSelector) property to retrieve child items at runtime. The standard [`ChildrenPath`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenPath) property cannot traverse mixed-type hierarchies. The [`ChildrenSelector`](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenSelector) property delegates child resolution to your custom logic.
+
+## Implementation details
+
+### Data Structure
+
+The [`AccordionControl`](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl) binds to a flat list of `Category` objects. Each `Category` contains a collection of `Item` objects in its `Items` property.
+
+```csharp
+public class Category {
+    public string CategoryName { get; set; }
+    public ObservableCollection<Item> Items { get; set; }
+}
+
+public class Item {
+    public string ItemName { get; set; }
+}
+```
+
+### Custom Children Selector
+
+The custom selector (`MySelector`) implements the `IChildrenSelector` interface. The selector returns child items only for `Category` objects:
+
+```csharp
+public class MySelector : IChildrenSelector {
+    public IEnumerable SelectChildren(object item) {
+        if (item is Category category)
+            return category.Items;
+        return null;
+    }
+}
+```
+
+### XAML Configuration
+
+Register the selector as a resource and assign it to the [`AccordionControl.ChildrenSelector`](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenSelector) property:
+
+```xaml
+<local:MySelector x:Key="mySelector" />
+<dxa:AccordionControl
+    ItemsSource="{Binding MyData.Categories}"
+    ChildrenSelector="{StaticResource mySelector}" />
+```
+
+### Data Templates
+
+Define templates to display `Category` and `Item` objects:
+
+```xaml
+<DataTemplate DataType="{x:Type local:Category}">
+    <TextBlock Text="{Binding CategoryName}" />
+</DataTemplate>
+<DataTemplate DataType="{x:Type local:Item}">
+    <TextBlock Text="{Binding ItemName}" />
+</DataTemplate>
+```
+
+## Files to Review
 
 * [MainWindow.xaml](./CS/ChildrenSelector/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/ChildrenSelector/MainWindow.xaml))
 * [ViewModel.cs](./CS/ChildrenSelector/ViewModel.cs) (VB: [ViewModel.vb](./VB/ChildrenSelector/ViewModel.vb))
-<!-- default file list end -->
-# WPF Accordion Control - Bind to a data source that contains hierarchical data objects of different types
 
-This example demonstrates how to bind the <a href="https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.class">AccordionControl</a> to data using the <a href="https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenSelector.property">AccordionControl.ChildrenSelector</a> property.<br>Refer to the <a href="https://documentation.devexpress.com/WPF/118635/Controls-and-Libraries/Navigation-Controls/Accordion-Control/Data-Binding">Data Binding</a> topic to learn more.
+## Documentation
 
-<br/>
+- [AccordionControl](https://docs.devexpress.com/WPF/118347/controls-and-libraries/navigation-controls/accordion-control)
+- [AccordionItem](https://docs.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionItem)
+- [AccordionViewMode](https://docs.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionViewMode)
+- [AccordionControl.ChildrenSelector](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenSelector.property)
+- [Data Binding](https://documentation.devexpress.com/WPF/118635/Controls-and-Libraries/Navigation-Controls/Accordion-Control/Data-Binding)
+- [MVVM Framework](https://docs.devexpress.com/WPF/15112/mvvm-framework)
 
+## More Examples
+
+- [ WPF Accordion Control - Bind to Hierarchical Data Structure](https://github.com/DevExpress-Examples/wpf-accordion-bind-to-hierarchical-data-structure)
+- [WPF MVVM Framework - Use View Models Generated at Compile Time](https://github.com/DevExpress-Examples/wpf-mvvm-framework-view-model-generator)
+- [WPF Dock Layout Manager - Bind the View Model Collection with LayoutAdapters](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-bind-view-model-collection-with-layoutadapters)
+- [WPF Dock Layout Manager - Bind the View Model Collection with IMVVMDockingProperties](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-bind-view-model-collection-with-IMVVMDockingProperties)
+- [WPF Dock Layout Manager - Populate a DockLayoutManager LayoutGroup with the ViewModels Collection](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-display-viewmodels-collection-in-layoutgroup)
 
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
