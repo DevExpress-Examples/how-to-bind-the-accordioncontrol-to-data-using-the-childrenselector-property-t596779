@@ -5,13 +5,13 @@
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
-# WPF Accordion Control - Bind to a data source that contains hierarchical data objects of different types
+# WPF Accordion Control - Bind to a Data Source that Contains Hierarchical Data Objects of Different Types
 
 This example binds the WPF [`AccordionControl`](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl) to a hierarchical data structure that includes objects of different types. Use this technique when your data model does not expose a unified child collection (for instance, when parent and child objects do not share a common base class).
 
 The implementation leverages the [`ChildrenSelector`](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenSelector) property to retrieve child items at runtime. The standard [`ChildrenPath`](https://docs.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenPath) property cannot traverse mixed-type hierarchies. The [`ChildrenSelector`](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenSelector) property delegates child resolution to your custom logic.
 
-## Implementation details
+## Implementation Details
 
 ### Data Structure
 
@@ -95,3 +95,4 @@ Define templates to display `Category` and `Item` objects:
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
