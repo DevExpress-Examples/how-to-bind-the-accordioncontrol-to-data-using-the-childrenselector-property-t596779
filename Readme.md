@@ -73,20 +73,20 @@ Define templates to display `Category` and `Item` objects:
 
 ## Documentation
 
-- [AccordionControl](https://docs.devexpress.com/WPF/118347/controls-and-libraries/navigation-controls/accordion-control)
-- [AccordionItem](https://docs.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionItem)
-- [AccordionViewMode](https://docs.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionViewMode)
-- [AccordionControl.ChildrenSelector](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenSelector.property)
-- [Data Binding](https://documentation.devexpress.com/WPF/118635/Controls-and-Libraries/Navigation-Controls/Accordion-Control/Data-Binding)
-- [MVVM Framework](https://docs.devexpress.com/WPF/15112/mvvm-framework)
+* [AccordionControl](https://docs.devexpress.com/WPF/118347/controls-and-libraries/navigation-controls/accordion-control)
+* [AccordionItem](https://docs.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionItem)
+* [AccordionViewMode](https://docs.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionViewMode)
+* [AccordionControl.ChildrenSelector](https://documentation.devexpress.com/WPF/DevExpress.Xpf.Accordion.AccordionControl.ChildrenSelector)
+* [Data Binding](https://documentation.devexpress.com/WPF/118635/Controls-and-Libraries/Navigation-Controls/Accordion-Control/Data-Binding)
+* [MVVM Framework](https://docs.devexpress.com/WPF/15112/mvvm-framework)
 
 ## More Examples
 
-- [ WPF Accordion Control - Bind to Hierarchical Data Structure](https://github.com/DevExpress-Examples/wpf-accordion-bind-to-hierarchical-data-structure)
-- [WPF MVVM Framework - Use View Models Generated at Compile Time](https://github.com/DevExpress-Examples/wpf-mvvm-framework-view-model-generator)
-- [WPF Dock Layout Manager - Bind the View Model Collection with LayoutAdapters](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-bind-view-model-collection-with-layoutadapters)
-- [WPF Dock Layout Manager - Bind the View Model Collection with IMVVMDockingProperties](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-bind-view-model-collection-with-IMVVMDockingProperties)
-- [WPF Dock Layout Manager - Populate a DockLayoutManager LayoutGroup with the ViewModels Collection](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-display-viewmodels-collection-in-layoutgroup)
+* [ WPF Accordion Control - Bind to Hierarchical Data Structure](https://github.com/DevExpress-Examples/wpf-accordion-bind-to-hierarchical-data-structure)
+* [WPF MVVM Framework - Use View Models Generated at Compile Time](https://github.com/DevExpress-Examples/wpf-mvvm-framework-view-model-generator)
+* [WPF Dock Layout Manager - Bind the View Model Collection with LayoutAdapters](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-bind-view-model-collection-with-layoutadapters)
+* [WPF Dock Layout Manager - Bind the View Model Collection with IMVVMDockingProperties](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-bind-view-model-collection-with-IMVVMDockingProperties)
+* [WPF Dock Layout Manager - Populate a DockLayoutManager LayoutGroup with the ViewModels Collection](https://github.com/DevExpress-Examples/wpf-docklayoutmanager-display-viewmodels-collection-in-layoutgroup)
 
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
@@ -95,4 +95,5 @@ Define templates to display `Category` and `Item` objects:
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
 
